@@ -2,29 +2,27 @@ import pygame
 import random
 import tkinter as tk
 
-# pyGame initialisation
 pygame.init()
 
-# main window for PyGame
+#  PyGame window and image initialisation
 win = pygame.display.set_mode((750, 600))
 pygame.display.set_caption("Snakes and Ladders")
-
-# image asset initialisation
 bg = pygame.image.load('assets/board.png')
 char = pygame.image.load('assets/idle.png')
 
-clock = pygame.time.Clock()
-
 
 def start_game():
-    # tkinter window for getting the names from the user
+    # tkinter window for getting inputs from users
     def set_name():
-        # takes the input from teh user and sets the name for that player respectively
-        global init, turn_button_text
+        # takes the input from te user and sets it as name for that player respectively
+        global init
         player[0].name, player[1].name = e1.get(), e2.get()
+        # when init == 0, no actions except instructions and start game can be performed
+        # if init == 1, user has set the names for players. so, now the game can be started
         init = 1
-        turn_button_text = str(player[player_number].name) + "'s turn"
-        turn_button.update_text(turn_button_text)
+
+        # the text on the button that shows current player's turn needs to be updated
+        turn_button.update_text(str(player[0].name) + "'s turn")
 
     def close_win():
         # closes the window
@@ -47,7 +45,8 @@ def start_game():
 
 
 def end_game(pla_number):
-    # tkinter window for getting the names from the user
+    # tkinter window that executes when a player wins the game
+    # displays a text consisting of winning player's name a predefined text
     def close_win():
         # closes the window
         master.destroy()
@@ -63,22 +62,21 @@ def end_game(pla_number):
 
 
 class Player(object):
-    # game is designed to be multi-player and object-oriented approach is used to speed things up
     def __init__(self, x, y):
-        self.speed = 51  # length of one tile on teh screen
+        self.speed = 51  # length of one tile on the screen
         self.x, self.y = x, y  # x and y co-ordinates for the position
         self.direction = 0  # the direction of the players heading
         self.pos = 1  # position of the tile player is present in
         self.name = "player"  # name of the player
-        self.roll = 0
+        self.roll = 0  # the recent roll of the player
 
-    def movement(self, win):
-        # updating the players position
+    def draw(self, win):
+        # placing the players on the screen
         win.blit(char, (self.x, self.y))
 
     def change_dir(self):
         # changes direction of the player's heading
-        # 0 >> right, 1 >> left
+        # 0 = right, 1 = left
         if self.direction == 0:
             self.direction = 1
         else:
@@ -86,25 +84,21 @@ class Player(object):
 
 
 def redraw_game_window():
-    global turn_button_text, dice_roll_button_text
-    # updates the values on teh screen after every turn
+    global turn_button_text  # to update the turn value on the screen after every turn
     pygame.display.update()
-    # background update
-    win.blit(bg, (0, 0))
-    # player position update
-    for pla in range(len(player)):
-        player[pla].movement(win)
-    # button update
+    win.blit(bg, (0, 0))     # background update
+
+    for pla in range(len(player)): # player position update
+        player[pla].draw(win)
+
+    # button value updating
     dice_button.draw(win)
     start_game_button.draw(win)
     instructions_button.draw(win)
     turn_button.draw(win)
     dice_roll_button.draw(win)
-
     turn_button_text = str(player[player_number].name) + "'s turn"
     turn_button.update_text(turn_button_text)
-
-
 
 
 def display_dice_iterations(count):
@@ -151,7 +145,6 @@ def display_player_positions():
 
 def move_player(n):
     # takes player number as argument and moves the player accordingly
-    # print(player[player_number].name , player[player_number].pos)
     global dice_roll_button_text
 
     def change_player():
@@ -169,126 +162,115 @@ def move_player(n):
         return val
 
     def win_check(x):
-        # x co-ordinate values with corresponding dice roll to win
-        print("win check initiated")
-        positions = {94: 6, 95: 5, 96: 4, 97: 3, 98: 2, 99: 1}
+        positions = {94: 6, 95: 5, 96: 4, 97: 3, 98: 2, 99: 1}  # pos values with corresponding dice roll to win
         plapos = positions[x-roll]
-        # as the player has run out of options for moving, the movements need to be restricted
         if roll > plapos:
+            # as the player has run out of options for moving, the movements need to be restricted
             player[n].pos -= roll
         else:
             player[n].x -= player[n].speed*roll
 
         if player[n].pos == 100:
+            # player has won the game so the ame finishes
             end_game(n)
 
     def snake_check():
         pass
 
     def ladder_check():
-
+        # checks to see if there's a ladder on that position and moves the player to the appropriate location if true
         if player[player_number].pos == 3:
-            print("3 number ladder c initiated")
             player[player_number].x -= player[player_number].speed*2
             player[player_number].y -= player[player_number].speed*4
             player[player_number].pos = 41
             direction_update()
 
         elif player[player_number].pos == 6:
-            print("6 number ladder c initiated")
             player[player_number].x += player[player_number].speed*1
             player[player_number].y -= player[player_number].speed*2
             player[player_number].pos = 27
             direction_update()
 
         elif player[player_number].pos == 11:
-            print("11 number ladder c initiated")
             player[player_number].y -= player[player_number].speed*3
             player[player_number].pos = 50
             direction_update()
 
         elif player[player_number].pos == 36:
-            print("36 number ladder c initiated")
             player[player_number].x -= player[player_number].speed*1
             player[player_number].y -= player[player_number].speed*2
             player[player_number].pos = 57
             direction_update()
 
         elif player[player_number].pos == 55:
-            print("55 number ladder c initiated")
             player[player_number].x -= player[player_number].speed*2
             player[player_number].y -= player[player_number].speed*4
             player[player_number].pos = 97
             direction_update()
 
         elif player[player_number].pos == 60:
-            print("60 number ladder c initiated")
             player[player_number].y -= player[player_number].speed*2
             player[player_number].pos = 80
             direction_update()
 
         elif player[player_number].pos == 67:
-            print("55 number ladder c initiated")
             player[player_number].x += player[player_number].speed
             player[player_number].y -= player[player_number].speed*2
             player[player_number].pos = 88
             direction_update()
 
     def direction_update():
-        # make a dict wit y values and direction values
+        # when the player comes across a ladder or a snake, they update the direction of moving
+        # this is achieved by linking the y coordinates to the appropriate direction
         dir_dict = {455: 0, 404: 1, 353: 0, 302: 1, 251: 0, 200: 1, 149: 0, 98: 1, 47: 0, -4: 1}
         player[player_number].direction = dir_dict[player[player_number].y]
 
     def movement(n):
-
+        # moves the player by one tile in appropriate direction
         if player[n].direction == 0:
             if player[n].x == 459:
                 player[n].y -= player[n].speed
                 player[n].change_dir()
-                # print(player[n].x)
-                # print(player[n].y)
             else:
                 player[n].x += player[n].speed
-                # print(player[n].x)
-                # print(player[n].y)
 
         elif player[n].direction == 1:
             if player[n].x == 0:
                 player[n].y -= player[n].speed
                 player[n].change_dir()
-                # print(player[n].x)
-                # print(player[n].y)
             else:
                 player[n].x -= player[n].speed
-                # print(player[n].x)
-                # print(player[n].y)
 
-    roll = dice_roll()
-    player[n].roll = roll
+    roll = dice_roll()  # dice roll
+    player[n].roll = roll  # saving the values in the player class
+
+    # updating the dice roll text on the screen
     dice_roll_button_text = str(player[player_number].name) + " rolled " + str(player[player_number].roll)
     dice_roll_button.update_text(dice_roll_button_text)
 
     # saving the position of the player by summing up the dice rolls
     player[n].pos += roll
+
     # saving each dice roll in dict
     dice_count[roll] += 1
 
     if player[n].y == -4 and player[n].x < 357:
+        # when the player reaches a certain position where the tiles in front < 6, we need to restrict his movements
         win_check(player[n].pos)
+
     else:
         # making the movements in one block at at time, so the position can be noted and evaluated
-        # moves the player by one step
-        for ik in range(roll):
+        for number in range(roll):
             movement(n)
 
-    ladder_check()
+    ladder_check()  # checks to see if there is a ladder starting on player's position
 
     # changing player turn
     change_player()
 
 
 class Button(object):
-    # a class made for easy creations of buttons
+    # a button class that eases up the button creation
     # takes color(hex values) x and y co-ordinates, width, height and the text
     def __init__(self, color, x, y, width, height, text=''):
         self.color = color
@@ -312,22 +294,23 @@ class Button(object):
                 return True
         return False
 
-    # can be used to update the color of the button
     def update_color(self, color):
+        # updates the color of the button
         self.color = color
 
     def update_text(self, text):
+        # updates the text of the button
         self.text = text
 
 
-# initializer statements
 player = [1, 2]
-dice_count = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0}
-# setting the players up in the board
+dice_count = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0}  # dice rolls happened in the game
+
 for i in range(len(player)):
+    # creating the players up in the board
     player[i] = Player(0, 455)
 
-# the three buttons that are present on the screen
+# setting up the buttons on the screen
 start_game_button = Button((96, 69, 96), 503, 2, 240, 95, "start game")
 dice_button = Button((96, 69, 96), 503, 100, 240, 95, "roll dice")
 instructions_button = Button((96, 69, 96), 503, 198, 240, 95, "instructions")
@@ -341,21 +324,21 @@ init = 0
 
 # main loop
 while run:
-    clock.tick(54)
     for event in pygame.event.get():
-        pos = pygame.mouse.get_pos()
+        pos = pygame.mouse.get_pos()  # gets the position of the mouse pointer
         if event.type == pygame.QUIT:
             run = False # exits us out of the loop thus ending the game
 
         if event.type == pygame.MOUSEBUTTONDOWN:
+            # checks if the mouse button is down and then the position of the mouse pointer
+            # if the pointer location falls inside of the button the functions gets called
+
             if dice_button.is_over(pos):
                 if init == 1:
                     move_player(player_number)
             if start_game_button.is_over(pos):
                 if init != 1:
                     start_game()
-                # checks if the mouse button is down and then the position of the mouse pointer
-                # if the pointer location falls inside of the button the functions gets called
 
         # hover functionality for the buttons
         if dice_button.is_over(pygame.mouse.get_pos()):
@@ -377,7 +360,6 @@ while run:
 
     # redraws game window
     redraw_game_window()
-
     display_dice_iterations(dice_count)
     display_player_positions()
 
