@@ -5,10 +5,6 @@ import tkinter as tk
 # pyGame initialisation
 pygame.init()
 
-kw = 1
-
-ks = 1
-
 # main window for PyGame
 win = pygame.display.set_mode((750, 600))
 pygame.display.set_caption("Snakes and Ladders")
@@ -107,6 +103,35 @@ def redraw_game_window():
 
     turn_button_text = str(player[player_number].name) + "'s turn"
     turn_button.update_text(turn_button_text)
+
+
+
+
+def display_dice_iterations(count):
+    # black rectangle to act as a canvas
+    # since the data will be updating after every turn it overlaps the previous data present
+    # and replaces it with updated values
+    # pygame.draw.rect(win, (0, 0, 0), (520, 320, 250, 250), 0)
+    # # setting up 2 fonts for the heading and for the count respectively
+    # font = pygame.font.SysFont('arial', 30)
+    # font1 = pygame.font.SysFont('arial', 18)
+    # text = font.render("- - Dice count - - ", True, (120, 255, 69))
+    # text1 = font1.render(" 1  :   " + str(count[1]), True, (120, 255, 69))
+    # text2 = font1.render(" 2  :   " + str(count[2]), True, (120, 255, 69))
+    # text3 = font1.render(" 3  :   " + str(count[3]), True, (120, 255, 69))
+    # text4 = font1.render(" 4  :   " + str(count[4]), True, (120, 255, 69))
+    # text5 = font1.render(" 5  :   " + str(count[5]), True, (120, 255, 69))
+    # text6 = font1.render(" 6  :   " + str(count[6]), True, (120, 255, 69))
+    # # placing text on the frame
+    # win.blit(text, (520, 320))
+    # win.blit(text1, (530, 350))
+    # win.blit(text2, (530, 370))
+    # win.blit(text3, (530, 390))
+    # win.blit(text4, (630, 350))
+    # win.blit(text5, (630, 370))
+    # win.blit(text6, (630, 390))
+    pass
+
 
 
 def display_player_positions():
