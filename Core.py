@@ -127,7 +127,6 @@ def display_dice_iterations(count):
     pass
 
 
-
 def display_player_positions():
     # black rectangle is needed to act as a canvas
     # since the data will be updated after every turn it overlaps the previous data present
