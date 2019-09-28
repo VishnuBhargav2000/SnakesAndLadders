@@ -2,8 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1fd8079d-3e96-4c9e-a947-d327926b3e9c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/vishn.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/vishn.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core.py" beforeDir="false" afterPath="$PROJECT_DIR$/Core.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Climb_001.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Climb_002.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Climb_003.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Climb_004.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Climb_005.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Climb_006.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Climb_007.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Climb_008.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Climb_009.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Run__001.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Run__001l.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Run__002.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Run__002l.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Run__003.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Run__003l.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Run__004.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Run__004l.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Run__005.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Run__005l.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Run__006.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Run__006l.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Run__007.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Run__007l.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Run__008.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Run__008l.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Run__009.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Run__009l.png" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,7 +60,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Core.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
+            <state relative-caret-position="-7">
               <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
@@ -201,12 +228,20 @@
       <workItem from="1569590700272" duration="3438000" />
       <workItem from="1569600270955" duration="5116000" />
       <workItem from="1569673676634" duration="2818000" />
-      <workItem from="1569679031451" duration="3357000" />
+      <workItem from="1569679031451" duration="4485000" />
     </task>
+    <task id="LOCAL-00001" summary="added comments to the code">
+      <created>1569682531149</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1569682531149</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96535000" />
+    <option name="totallyTimeSpent" value="97663000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -219,7 +254,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4992948" visible="true" weight="0.14343163" />
       <window_info id="Structure" order="1" sideWeight="0.50070524" side_tool="true" weight="0.14343163" />
@@ -274,10 +308,14 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added comments to the code" />
+    <option name="LAST_COMMIT_MESSAGE" value="added comments to the code" />
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/SnakesAndLadders$temp.coverage" NAME="Core Coverage Results" MODIFIED="1569594109034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/SnakesAndLadders$ey.coverage" NAME="ey Coverage Results" MODIFIED="1569675259958" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/SnakesAndLadders$Core.coverage" NAME="Core Coverage Results" MODIFIED="1569682390117" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/SnakesAndLadders$Core.coverage" NAME="Core Coverage Results" MODIFIED="1569690436907" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/assets/Climb_003.png">
@@ -338,7 +376,7 @@
     <entry file="file://$PROJECT_DIR$/ey.py" />
     <entry file="file://$PROJECT_DIR$/Core.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
+        <state relative-caret-position="-7">
           <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
