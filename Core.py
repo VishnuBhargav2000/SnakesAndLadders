@@ -174,7 +174,34 @@ def move_player(n):
             end_game(n)
 
     def snake_check():
-        pass
+        if player[player_number].pos == 34:
+            player[player_number].x += player[player_number].speed * 1
+            player[player_number].y += player[player_number].speed * 3
+            player[player_number].pos = 8
+            direction_update()
+
+        elif player[player_number].pos == 43:
+            player[player_number].x += player[player_number].speed * 1
+            player[player_number].y += player[player_number].speed * 3
+            player[player_number].pos = 17
+            direction_update()
+
+        elif player[player_number].pos == 72:
+            player[player_number].x -= player[player_number].speed * 1
+            player[player_number].y += player[player_number].speed * 4
+            player[player_number].pos = 33
+            direction_update()
+
+        elif player[player_number].pos == 84:
+            player[player_number].x -= player[player_number].speed * 1
+            player[player_number].y += player[player_number].speed * 2
+            player[player_number].pos = 63
+            direction_update()
+
+        elif player[player_number].pos == 99:
+            player[player_number].y += player[player_number].speed * 5
+            player[player_number].pos = 42
+            direction_update()
 
     def ladder_check():
         # checks to see if there's a ladder on that position and moves the player to the appropriate location if true
@@ -262,7 +289,8 @@ def move_player(n):
         for number in range(roll):
             movement(n)
 
-    ladder_check()  # checks to see if there is a ladder starting on player's position
+    ladder_check()  # checks to see if there is a ladder present on player's position
+    snake_check()   # checks to see if there is a snake present on player's position
 
     # changing player turn
     change_player()
