@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1fd8079d-3e96-4c9e-a947-d327926b3e9c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core.py" beforeDir="false" afterPath="$PROJECT_DIR$/Core.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,8 +32,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Core.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="101">
-              <caret line="7" column="41" lean-forward="true" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
+            <state relative-caret-position="434">
+              <caret line="294" column="4" selection-start-line="294" selection-start-column="4" selection-end-line="294" selection-end-column="4" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -83,7 +83,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -95,6 +94,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -225,6 +225,7 @@
       <workItem from="1569600270955" duration="5116000" />
       <workItem from="1569673676634" duration="2818000" />
       <workItem from="1569679031451" duration="5481000" />
+      <workItem from="1569755197213" duration="507000" />
     </task>
     <task id="LOCAL-00001" summary="added comments to the code">
       <created>1569682531149</created>
@@ -244,7 +245,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98659000" />
+    <option name="totallyTimeSpent" value="99166000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -259,7 +260,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4992948" visible="true" weight="0.14343163" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4992948" visible="true" weight="0.14544237" />
       <window_info id="Structure" order="1" sideWeight="0.50070524" side_tool="true" weight="0.14343163" />
       <window_info id="Favorites" order="2" sideWeight="0.50070524" side_tool="true" weight="0.14343163" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -321,15 +322,11 @@
     <SUITE FILE_PATH="coverage/SnakesAndLadders$temp.coverage" NAME="Core Coverage Results" MODIFIED="1569594109034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/SnakesAndLadders$Tic_Tac_Toe.coverage" NAME="Tic Tac Toe Coverage Results" MODIFIED="1569691158865" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Desktop/Tic Tac Toe" />
     <SUITE FILE_PATH="coverage/SnakesAndLadders$ey.coverage" NAME="ey Coverage Results" MODIFIED="1569675259958" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/SnakesAndLadders$Core.coverage" NAME="Core Coverage Results" MODIFIED="1569694994956" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/SnakesAndLadders$Core.coverage" NAME="Core Coverage Results" MODIFIED="1569755281196" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/assets/Climb_003.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/Climb_005.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/Climb_003.png" />
+    <entry file="file://$PROJECT_DIR$/assets/Climb_005.png" />
     <entry file="file://$PROJECT_DIR$/python_functions.py" />
     <entry file="file://$PROJECT_DIR$/../Temp Projects/what day is it/main.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -392,8 +389,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Core.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="7" column="41" lean-forward="true" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
+        <state relative-caret-position="434">
+          <caret line="294" column="4" selection-start-line="294" selection-start-column="4" selection-end-line="294" selection-end-column="4" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
