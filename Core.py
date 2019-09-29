@@ -58,6 +58,7 @@ def end_game(pla_number):
     text = player[pla_number].name + " won"
     tk.Label(master, text=text).grid(row=0)
     tk.Button(master, text='end game', command=close_win).grid(row=1, sticky=tk.W, pady=8)
+    dice_roll_button.update_text(str(player[pla_number].name) + " rolled " + str(player[pla_number].roll))
     tk.mainloop()
 
 
