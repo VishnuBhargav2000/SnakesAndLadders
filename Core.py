@@ -58,7 +58,6 @@ def end_game(pla_number):
     text = player[pla_number].name + " won"
     tk.Label(master, text=text).grid(row=0)
     tk.Button(master, text='end game', command=close_win).grid(row=1, sticky=tk.W, pady=8)
-    dice_roll_button.update_text(str(player[pla_number].name) + " rolled " + str(player[pla_number].roll))
     tk.mainloop()
 
 
@@ -172,6 +171,7 @@ def move_player(n):
 
         if player[n].pos == 100:
             # player has won the game so the ame finishes
+            dice_roll_button.update_text(str(player[n].name) + " rolled " + str(player[n].roll))
             end_game(n)
 
     def snake_check():
@@ -392,5 +392,8 @@ while run:
     display_player_positions()
 
 pygame.quit()
+
+
+
 
 
