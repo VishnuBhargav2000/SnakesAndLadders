@@ -1,7 +1,6 @@
 import pygame
 import random
 import tkinter as tk
-ello,
 pygame.init()
 
 #  PyGame window and image initialisation
@@ -126,22 +125,6 @@ def display_dice_iterations(count):
     # win.blit(text4, (630, 350))
     # win.blit(text5, (630, 370))
     # win.blit(text6, (630, 390))
-    pass
-
-
-def display_player_positions():
-    # black rectangle is needed to act as a canvas
-    # since the data will be updated after every turn it overlaps the previous data present
-    # and replaces it with updated values
-    # pygame.draw.rect(win, (0, 0, 0), (0, 500, 500, 300), 0)
-    # pygame.draw.rect(win, (0, 0, 0), (400, 500, 550, 250), 0)
-    # # setting the font
-    # font = pygame.font.SysFont('arial', 35)
-    # text1 = font.render(str(player[0].name) + "'s position : " + str(player[0].pos), True, (120, 255, 69))
-    # text2 = font.render(str(player[1].name) + "'s position : " + str(player[1].pos), True, (120, 255, 69))
-    # # placing text on the frame
-    # win.blit(text1, (10, 520))
-    # win.blit(text2, (400, 520))
     pass
 
 
@@ -411,7 +394,7 @@ while run:
     # redraws game window
     redraw_game_window()
     display_dice_iterations(dice_count)
-    display_player_positions()
+
 
 pygame.quit()
 
