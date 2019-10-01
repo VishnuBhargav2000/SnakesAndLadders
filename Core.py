@@ -5,7 +5,7 @@ import tkinter as tk
 pygame.init()
 
 #  PyGame window and image initialisation
-win = pygame.display.set_mode((750, 600))
+win = pygame.display.set_mode((750, 500))
 pygame.display.set_caption("Snakes and Ladders")
 bg = pygame.image.load('assets/board.png')
 char = pygame.image.load('assets/idle.png')
@@ -99,6 +99,8 @@ def redraw_game_window():
     dice_roll_button.draw(win)
     turn_button_text = str(player[player_number].name) + "'s turn"
     turn_button.update_text(turn_button_text)
+    dice_iter_button.draw(win)
+    change_board_button.draw(win)
 
 
 def display_dice_iterations(count):
@@ -131,15 +133,16 @@ def display_player_positions():
     # black rectangle is needed to act as a canvas
     # since the data will be updated after every turn it overlaps the previous data present
     # and replaces it with updated values
-    pygame.draw.rect(win, (0, 0, 0), (0, 500, 500, 300), 0)
-    pygame.draw.rect(win, (0, 0, 0), (400, 500, 550, 250), 0)
-    # setting the font
-    font = pygame.font.SysFont('arial', 35)
-    text1 = font.render(str(player[0].name) + "'s position : " + str(player[0].pos), True, (120, 255, 69))
-    text2 = font.render(str(player[1].name) + "'s position : " + str(player[1].pos), True, (120, 255, 69))
-    # placing text on the frame
-    win.blit(text1, (10, 520))
-    win.blit(text2, (400, 520))
+    # pygame.draw.rect(win, (0, 0, 0), (0, 500, 500, 300), 0)
+    # pygame.draw.rect(win, (0, 0, 0), (400, 500, 550, 250), 0)
+    # # setting the font
+    # font = pygame.font.SysFont('arial', 35)
+    # text1 = font.render(str(player[0].name) + "'s position : " + str(player[0].pos), True, (120, 255, 69))
+    # text2 = font.render(str(player[1].name) + "'s position : " + str(player[1].pos), True, (120, 255, 69))
+    # # placing text on the frame
+    # win.blit(text1, (10, 520))
+    # win.blit(text2, (400, 520))
+    pass
 
 
 def move_player(n):
@@ -206,45 +209,47 @@ def move_player(n):
 
     def ladder_check():
         # checks to see if there's a ladder on that position and moves the player to the appropriate location if true
-        if player[player_number].pos == 3:
-            player[player_number].x -= player[player_number].speed*2
-            player[player_number].y -= player[player_number].speed*4
-            player[player_number].pos = 41
-            direction_update()
+        global board
+        if board == 1:
+            if player[player_number].pos == 3:
+                player[player_number].x -= player[player_number].speed*2
+                player[player_number].y -= player[player_number].speed*4
+                player[player_number].pos = 41
+                direction_update()
 
-        elif player[player_number].pos == 6:
-            player[player_number].x += player[player_number].speed*1
-            player[player_number].y -= player[player_number].speed*2
-            player[player_number].pos = 27
-            direction_update()
+            elif player[player_number].pos == 6:
+                player[player_number].x += player[player_number].speed*1
+                player[player_number].y -= player[player_number].speed*2
+                player[player_number].pos = 27
+                direction_update()
 
-        elif player[player_number].pos == 11:
-            player[player_number].y -= player[player_number].speed*3
-            player[player_number].pos = 50
-            direction_update()
+            elif player[player_number].pos == 11:
+                player[player_number].y -= player[player_number].speed*3
+                player[player_number].pos = 50
+                direction_update()
 
-        elif player[player_number].pos == 36:
-            player[player_number].x -= player[player_number].speed*1
-            player[player_number].y -= player[player_number].speed*2
-            player[player_number].pos = 57
-            direction_update()
+            elif player[player_number].pos == 36:
+                player[player_number].x -= player[player_number].speed*1
+                player[player_number].y -= player[player_number].speed*2
+                player[player_number].pos = 57
+                direction_update()
 
-        elif player[player_number].pos == 55:
-            player[player_number].x -= player[player_number].speed*2
-            player[player_number].y -= player[player_number].speed*4
-            player[player_number].pos = 97
-            direction_update()
+            elif player[player_number].pos == 55:
+                player[player_number].x -= player[player_number].speed*2
+                player[player_number].y -= player[player_number].speed*4
+                player[player_number].pos = 97
+                direction_update()
 
-        elif player[player_number].pos == 60:
-            player[player_number].y -= player[player_number].speed*2
-            player[player_number].pos = 80
-            direction_update()
+            elif player[player_number].pos == 60:
+                player[player_number].y -= player[player_number].speed*2
+                player[player_number].pos = 80
+                direction_update()
 
-        elif player[player_number].pos == 67:
-            player[player_number].x += player[player_number].speed
-            player[player_number].y -= player[player_number].speed*2
-            player[player_number].pos = 88
-            direction_update()
+            elif player[player_number].pos == 67:
+                player[player_number].x += player[player_number].speed
+                player[player_number].y -= player[player_number].speed*2
+                player[player_number].pos = 88
+                direction_update()
 
     def direction_update():
         # when the player comes across a ladder or a snake, they update the direction of moving
@@ -311,7 +316,7 @@ class Button(object):
     # for placing it on the screen
     def draw(self, win):
         pygame.draw.rect(win, self.color, (self.x, self.y, self.width, self.height), 0)
-        font = pygame.font.SysFont('arial', 40)
+        font = pygame.font.SysFont('arial', 30)
         text = font.render(self.text, 1, (0, 0, 0))
         win.blit(text, (self.x + (self.width / 2 - text.get_width() / 2), self.y + (self.height / 2 - text.get_height() / 2)))
 
@@ -339,16 +344,19 @@ for i in range(len(player)):
     player[i] = Player(0, 455)
 
 # setting up the buttons on the screen
-start_game_button = Button((96, 69, 96), 503, 2, 240, 95, "start game")
-dice_button = Button((96, 69, 96), 503, 100, 240, 95, "roll dice")
-instructions_button = Button((96, 69, 96), 503, 198, 240, 95, "instructions")
-turn_button = Button((120, 72, 5), 503, 296, 240, 95, text="turn")
-dice_roll_button = Button((120, 72, 5), 503, 394, 240, 95, text="roll ")
+start_game_button = Button((96, 69, 96), 503, 2, 240, 60, "start game")
+dice_button = Button((96, 69, 96), 503, 65, 240, 60, "roll dice")
+instructions_button = Button((96, 69, 96), 503, 128, 240, 60, "instructions")
+turn_button = Button((120, 72, 5), 503, 191, 240, 60, text="turn")
+dice_roll_button = Button((120, 72, 5), 503, 254, 240, 60, text="roll ")
+dice_iter_button = Button((120, 72, 5), 503, 317, 240, 60, text="dice iterations ")
+change_board_button = Button((120, 72, 5), 503, 380, 240, 60, text="change board ")
 
 
 run = True
 direction, player_number = 1, 0
 init = 0
+board = 1
 
 # main loop
 while run:
@@ -364,6 +372,7 @@ while run:
             if dice_button.is_over(pos):
                 if init == 1:
                     move_player(player_number)
+
             if start_game_button.is_over(pos):
                 if init != 1:
                     start_game()
@@ -375,6 +384,12 @@ while run:
         else:
             dice_button.update_color((120, 72, 5))
 
+        if dice_iter_button.is_over(pygame.mouse.get_pos()):
+            if init == 1:
+                dice_iter_button.update_color((200, 2, 225))
+        else:
+            dice_iter_button.update_color((120, 72, 5))
+
         if start_game_button.is_over(pygame.mouse.get_pos()):
             if init != 1:
                 start_game_button.update_color((200, 2, 225))
@@ -385,6 +400,12 @@ while run:
             instructions_button.update_color((200, 2, 225))
         else:
             instructions_button.update_color((120, 72, 5))
+
+        if change_board_button.is_over(pygame.mouse.get_pos()):
+            if init != 1:
+                change_board_button.update_color((200, 2, 225))
+        else:
+            change_board_button.update_color((120, 72, 5))
 
     # redraws game window
     redraw_game_window()
