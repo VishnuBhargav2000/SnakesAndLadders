@@ -3,6 +3,7 @@ import random
 import tkinter as tk
 pygame.init()
 
+
 #  PyGame window and image initialisation
 win = pygame.display.set_mode((750, 500))
 pygame.display.set_caption("Snakes and Ladders")
