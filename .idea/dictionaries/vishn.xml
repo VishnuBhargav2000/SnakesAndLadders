@@ -13,7 +13,11 @@
       <w>fname</w>
       <w>inserter</w>
       <w>lname</w>
+      <w>lrgq</w>
+      <w>mydata</w>
+      <w>mydb</w>
       <w>plapos</w>
+      <w>remotemysql</w>
       <w>sucessfull</w>
       <w>sume</w>
       <w>walkcount</w>

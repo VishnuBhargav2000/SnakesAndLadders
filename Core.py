@@ -1,6 +1,9 @@
 import pygame
 import random
 import tkinter as tk
+import mysql.connector
+
+
 pygame.init()
 
 
@@ -9,6 +12,15 @@ win = pygame.display.set_mode((750, 500))
 pygame.display.set_caption("Snakes and Ladders")
 bg = pygame.image.load('assets/board.png')
 char = pygame.image.load('assets/idle.png')
+
+# mydb = mysql.connector.connect(
+#     host="remotemysql.com",
+#     user="NDQZUlLrgq",
+#     passwd="pmm203WaVS")
+#
+# mycursor = mydb.cursor()
+#
+# mycursor.execute("CREATE DATABASE NDQZUlLrgq")
 
 
 def start_game():
@@ -162,7 +174,7 @@ def move_player(n):
             end_game(n)
 
     def snake_check():
-        if board ==1:
+        if board == 1:
             if player[player_number].pos == 34:
                 player[player_number].x += player[player_number].speed * 1
                 player[player_number].y += player[player_number].speed * 3
