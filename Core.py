@@ -13,6 +13,7 @@ pygame.display.set_caption("Snakes and Ladders")
 bg = pygame.image.load('assets/board.png')
 char = pygame.image.load('assets/idle.png')
 
+
 # mydb = mysql.connector.connect(
 #     host="remotemysql.com",
 #     user="NDQZUlLrgq",
