@@ -13,18 +13,8 @@ pygame.display.set_caption("Snakes and Ladders")
 bg = pygame.image.load('assets/board.png')
 char = pygame.image.load('assets/idle.png')
 pla2 = pygame.image.load('assets/player2.png')
-
-
-mydb = mysql.connector.connect(
-    host="remotemysql.com",
-    user="TAj1dnNYzI",
-    passwd="QYm05OssQb",
-    database="TAj1dnNYzI")
-
-mycursor = mydb.cursor()
-
-mycursor.execute("CREATE TABLE scores (name VARCHAR(255), moves integer )")
-# mycursor.execute("DROP TABLE customers")
+pla1_char = pygame.image.load('assets/idle.png')
+pla2_char = pygame.image.load('assets/player2.png')
 
 
 def start_game():
@@ -74,6 +64,20 @@ def end_game(pla_number):
     text = player[pla_number].name + " won"
     tk.Label(master, text=text).grid(row=0)
     tk.Button(master, text='end game', command=close_win).grid(row=1, sticky=tk.W, pady=8)
+    tk.mainloop()
+
+
+def feature_under_construction():
+    def close_win():
+        # closes the window
+        master.destroy()
+
+    text = "feature under development"
+    master = tk.Tk()
+    master.title(text)
+    master.geometry("200x100+900+100")
+    tk.Label(master, text=text).grid(row=0)
+    tk.Button(master, text='okay.', command=close_win).grid(row=1, sticky=tk.W, pady=8)
     tk.mainloop()
 
 
@@ -347,12 +351,16 @@ turn_button = Button((120, 72, 5), 503, 191, 240, 60, text="turn")
 dice_roll_button = Button((120, 72, 5), 503, 254, 240, 60, text="roll ")
 dice_iter_button = Button((120, 72, 5), 503, 317, 240, 60, text="dice iterations ")
 change_board_button = Button((120, 72, 5), 503, 380, 240, 60, text="change board ")
+player_info = Button((120, 72, 5), 503, 443, 240, 60, "< P1,P2 >")
 
 
 run = True
 direction, player_number = 1, 0
 init = 0
 board = 1
+player_info.draw(win)
+win.blit(pla1_char, (503, 448))
+win.blit(pla2_char, (710, 448))
 
 # main loop
 while run:
@@ -372,6 +380,17 @@ while run:
             if start_game_button.is_over(pos):
                 if init != 1:
                     start_game()
+
+            if dice_iter_button.is_over(pos):
+                feature_under_construction()
+
+            if instructions_button.is_over(pos):
+                feature_under_construction()
+
+            if change_board_button.is_over(pos):
+                feature_under_construction()
+
+
 
         # hover functionality for the buttons
         if dice_button.is_over(pygame.mouse.get_pos()):
