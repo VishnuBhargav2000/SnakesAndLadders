@@ -12,16 +12,19 @@ win = pygame.display.set_mode((750, 500))
 pygame.display.set_caption("Snakes and Ladders")
 bg = pygame.image.load('assets/board.png')
 char = pygame.image.load('assets/idle.png')
+pla2 = pygame.image.load('assets/player2.png')
 
 
-# mydb = mysql.connector.connect(
-#     host="remotemysql.com",
-#     user="NDQZUlLrgq",
-#     passwd="pmm203WaVS")
-#
-# mycursor = mydb.cursor()
-#
-# mycursor.execute("CREATE DATABASE NDQZUlLrgq")
+mydb = mysql.connector.connect(
+    host="remotemysql.com",
+    user="TAj1dnNYzI",
+    passwd="QYm05OssQb",
+    database="TAj1dnNYzI")
+
+mycursor = mydb.cursor()
+
+mycursor.execute("CREATE TABLE scores (name VARCHAR(255), moves integer )")
+# mycursor.execute("DROP TABLE customers")
 
 
 def start_game():
@@ -83,10 +86,6 @@ class Player(object):
         self.name = "player"  # name of the player
         self.roll = 0  # the recent roll of the player
 
-    def draw(self, win):
-        # placing the players on the screen
-        win.blit(char, (self.x, self.y))
-
     def change_dir(self):
         # changes direction of the player's heading
         # 0 = right, 1 = left
@@ -100,9 +99,8 @@ def redraw_game_window():
     global turn_button_text  # to update the turn value on the screen after every turn
     pygame.display.update()
     win.blit(bg, (0, 0))     # background update
-
-    for pla in range(len(player)): # player position update
-        player[pla].draw(win)
+    win.blit(char, (player[0].x, player[0].y))
+    win.blit(pla2, (player[1].x, player[1].y))
 
     # button value updating
     dice_button.draw(win)
